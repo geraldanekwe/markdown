@@ -19,8 +19,6 @@ function responseHandler(req, res) {
   });
   if (req.url === '/') {
     fs.readFile("index.html", "utf8", function(err, data) {
-      // console.log(marked('I am using __markdown__.'));
-
       res.end(data);
     });
   } else if (req.url.match("/markdown/")) {
