@@ -6,8 +6,7 @@ var fs = require("fs"),
 
 
 
-http.createServer(responseHandler).listen(8887);
-// var fbRef = new Firebase(process.env.FB_URL);
+http.createServer(responseHandler).listen(process.env.PORT || 8887);
 
 function responseHandler(req, res) {
   if (req.url.match('fav')) {
