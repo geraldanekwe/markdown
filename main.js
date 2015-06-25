@@ -4,13 +4,10 @@ var fs = require("fs"),
   index = fs.readFileSync('index.html'),
   marked = require('marked');
 
-
-
 http.createServer(responseHandler).listen(process.env.PORT || 8887);
 
 function responseHandler(req, res) {
   if (req.url.match('fav')) {
-    res.write(data);
     res.end('');
     return;
   }
@@ -18,6 +15,7 @@ function responseHandler(req, res) {
     "Content-Type": "text/html"
   });
   if (req.url === '/') {
+    console.log("sure");
     fs.readFile("index.html", "utf8", function(err, data) {
       res.end(data);
     });
